@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    font-family: "Flow Circular", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #191825;
+    overflow-x: hidden;
+}
+
+.titre{
+    font-weight: bold;
+}
+
+.alice-carousel__dots{
+    display: none;
+}
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn{
+    width: fit-content;
+    position: absolute;
+    top: -180px;
+    right: 0;
+}
+
+.alice-carousel__prev-btn{
+    right: 120px;
+}
+
+.alice-carousel__prev-btn-item{
+    width: fit-content;
+    border-radius: 100%;
+    padding: 37px 42px;
+    border: 1px solid #19182538;
+    background: #fff;
+}
+
+.alice-carousel__next-btn-item{
+    width: fit-content;
+    border-radius: 100%;
+    padding: 37px 42px;
+    background-color: #5D50C6;
+}
+
+ .alice-carousel__prev-btn-item span[data-area]::after{
+    content: url('./assets/shapeblack.svg');
+}
+
+.alice-carousel__next-btn-item span[data-area]::after{
+    content: url('./assets/shapewhite.svg');
+}
+
+@media (min-width: 1024px) and (max-width: 1280px){
+    .alice-carousel__prev-btn-item,
+    .alice-carousel__next-btn-item{
+        padding: 20px 24px;
+    }
+
+    .alice-carousel__prev-btn,
+    .alice-carousel__next-btn{
+        position: absolute;
+        top: -80px;
+    }
+
+    .alice-carousel__next-btn{
+        right: 50px;
+    }
+
+    .alice-carousel__prev-btn{
+        left: 50px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 1024px){
+    .alice-carousel__prev-btn-item,
+    .alice-carousel__next-btn-item{
+        padding: 16px 20px;
+    }
+
+    .alice-carousel__prev-btn,
+    .alice-carousel__next-btn{
+        top: -50px;
+    }
+
+    .alice-carousel__next-btn{
+        right: 50px;
+    }
+
+    .alice-carousel__prev-btn{
+        left: 50px;
+    }
+}
+
+/* @media (min-width: 100px) and (max-width: 200px){
+    .alice-carousel__next-btn{
+        right: 0px;
+    }
+
+    .alice-carousel__prev-btn{
+        left: 0px;
+    }
+} */
+
+.speciale .alice-carousel__dots{
+    display: flex;
+    justify-content: center;
+}
+
+.speciale .alice-carousel__dots-item.__active{
+    background-color: #F85E9F;
+}
+
+.speciale .alice-carousel__prev-btn,
+.speciale .alice-carousel__next-btn{
+    top: 120px;
+    height: fit-content;
+}
+
+.speciale .alice-carousel__next-btn{
+    right: 0;
+}
+
+.speciale .alice-carousel__prev-btn{
+    left: 0;
+}
+
+.speciale .alice-carousel{
+    position: relative;
+    height: fit-content;
+}
+
+@media (min-width: 200px) and (max-width: 658px){
+    .speciale .alice-carousel__prev-btn,
+    .speciale .alice-carousel__next-btn{
+        top: 450px;
+    }
+}
