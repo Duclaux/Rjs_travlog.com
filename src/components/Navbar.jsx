@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Container from '../tools/Container'
 import Logo from '../assets/logo.svg'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
 
@@ -13,9 +14,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='w-[300px] h-[300px] bg-tertiaire top-[-210px] left-[-210px] drop-shadow-[100px_100px_700px_#FF5722] hidden lg:flex xl:hidden rounded-r-[100%] rounded-tr absolute -z-10'></div>
+      <div className='w-[300px] h-[300px] bg-tertiaire top-[-210px] left-[-210px] drop-shadow-[100px_100px_700px_#FF5722] hidden lg:flex xl:hidden rounded-r-[100%] rounded-tr absolute'></div>
       <Container>
-          <div className='grid grid-cols-2 lg:grid-cols-3 justify-between py-3 lg:py-7 xl:grid-cols-5 '>
+          <motion.div className='grid grid-cols-2 lg:grid-cols-3 justify-between py-3 lg:py-7 xl:grid-cols-5'
+          >
 
               {/* menu hambergur s'affichant a gauche */}
               <div className='hidden h-20 lg:flex items-center lg:col-span-1 xl:hidden z-10'>
@@ -53,15 +55,15 @@ const Navbar = () => {
                 <button className='font-bold size-[14px] w-32 h-16 bg-primaire text-center rounded-[40px] text-white ml-5 xl:text-xl xl:w-40 xl:h-[65px]'>Sign Up</button>
               </div>
 
-              <div className={nav ? 'fixed top-0 bg-[#FACD49] px-10 pt-32 right-0 w-[60%] xl:hidden h-full lg:left-0 ease-in-out duration-500' : 'bg-[#fff] px-10 pt-5 xl:hidden fixed top-0 right-[-100%] w-[60%] h-full lg:left-[-100%] lg:z-0 ease-in-out duration-500'}>
+              <div className={nav ? 'fixed top-24 lg:top-28 px-10 pt-11 right-0 z-10 bg-secondaire w-full text-center xl:hidden h-fit lg:left-0 ease-in-out duration-500 text-[#fff]' : 'text-[#fff] bg-secondaire px-10 pt-5 xl:hidden fixed top-24 lg:top-28 right-[-100%] w-full text-center h-fit lg:left-[-100%] z-10 lg:z-10 ease-in-out duration-500'}>
                 <ul className='flex-col items-center justify-evenly'>
-                  <li className='font-bold text-xl mb-7 border-b-2 pb-3 border-tertiaire'>Home</li>
-                  <li className='font-bold text-xl mb-7 border-b-2 pb-3 border-tertiaire duration-200 cursor-pointer'>Discover</li>
-                  <li className='font-bold text-xl mb-7 border-b-2 pb-3 border-tertiaire w-auto duration-200 cursor-pointer'>Special Deals</li>
-                  <li className='font-bold text-xl border-b-2 pb-3 border-tertiaire duration-200 cursor-pointer'>Contact</li>
+                  <li className='font-bold text-xl mb-10'>Home</li>
+                  <li className='font-bold text-xl mb-10 duration-200 cursor-pointer'>Discover</li>
+                  <li className='font-bold text-xl mb-10 w-auto duration-200 cursor-pointer'>Special Deals</li>
+                  <li className='font-bold text-xl mb-10 duration-200 cursor-pointer'>Contact</li>
                 </ul>
               </div>
-          </div>
+          </motion.div>
       </Container>
     </>
   )

@@ -11,13 +11,26 @@ import Location from '../assets/location.svg'
 import Add from '../assets/add.svg'
 import Market from '../assets/market.svg'
 import Play from '../assets/play.svg'
+import { motion } from 'framer-motion'
 
 const HeroTop = () => {
   return (
     <Container>
         <div className='xl:grid xl:grid-cols-3 flex flex-col-reverse items-start justify-center mb-10'>
             {/* block pour le texte */}
-            <div className='h-96 w-full xl:col-span-1'>
+            <motion.div className='h-96 w-full xl:col-span-1'
+                initial={{
+                    y: 200,
+                    opacity:0
+                }}
+
+                animate={{
+                    y: 0,
+                    opacity: 1
+                }}
+
+                transition={{ease:'easeInOut', duration:1}}
+            >
                 <div className='w-full mt-16 xl:mt-[130px]'>
                     <div className='flex items-center justify-center mx-auto xl:ml-0 w-fit px-[32px] py-[18px] rounded-[120px] bg-white drop-shadow-lg'>
                         <p className='text-secondaire size-[14px] font-bold w-auto mr-[32px]'>Explore the world!</p>
@@ -45,7 +58,7 @@ const HeroTop = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             {/* bloc pour les images */}
             <div className='h-auto w-full xl:col-span-2 mt-[32px] xl:mt-[64px] relative'>
@@ -56,28 +69,85 @@ const HeroTop = () => {
 
                 <div className='w-[295.16px] mx-auto sm:w-[400px] lg:w-[600px]'>
                     <div className='relative mt-[50px] sm:mt-[100px]'>
-                        <div className=''>
+                        <motion.div className=''
+                            initial={{
+                                x: -100,
+                                opacity:0
+                            }}
+
+                            animate={{
+                                x:0,
+                                opacity:1
+                            }}
+
+                            transition={{
+                                ease:'easeInOut',
+                                duration:1.5
+                            }}
+                        >
                             <img src={Rect1} alt="" className='w-[139.62px] h-[154px] lg:w-[272px] sm:h-[200px] sm:w-[150px] lg:h-[300px]'/>
                             <div className='p-[15px] bg-secondaire rounded-[100%] w-fit absolute top-32 -left-5 sm:top-44 lg:top-64'>
                                 <img src={Send} alt="" className='w-[13.69px] h-[13.69px] sm:w-[26.67px] sm:h-[26.67px]'/>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className='mt-[32px] sm:mt-[40px]'>
+                        <motion.div 
+                            className='mt-[32px] sm:mt-[40px]'
+                            initial={{
+                                y:100,
+                                opacity:0
+                            }}
+
+                            animate={{
+                                y:0,
+                                opacity:1
+                            }}
+
+                            transition={{
+                                ease:'easeInOut',
+                                duration:1.5
+                            }}
+                        >
                             <img src={Rect2} alt="" className='w-[139.62px] h-[154] sm:h-[200px] sm:w-[150px] lg:w-[272px] lg:h-[300px]'/>
-                        </div>
+                        </motion.div>
 
-                        <div className='absolute top-[59.55px] -right-2 xl:top-[100px]'>
+                        <motion.div 
+                            className='absolute top-[59.55px] -right-2 xl:top-[100px]'
+                            initial={{
+                                x:100,
+                                opacity:0
+                            }}
+                            animate={{
+                                x:0,
+                                opacity:1
+                            }}
+
+                            transition={{
+                                ease:'easeInOut',
+                                duration:1.5
+                            }}
+                        >
                             <img src={Rect3} alt="" className='w-[139.62px] sm:h-[300px] sm:w-[200px] h-[205.33px] lg:w-[272px] lg:h-[400px]'/>
                             <div className='hidden sm:flex items-center justify-center px-[10px] py-[5px] sm:px-[30px] sm:py-[12px] rounded-[120px] bg-white drop-shadow-lg  absolute bottom-5 -right-10'>
                                 <img src={Location} alt="" className='w-[20px] h-[20px] sm:w-[26.67px] sm:h-[26.67px]'/>
                                 <p className='text-[#393E46] size-[3px] font-bold w-auto h-auto ml-2 sm:ml-3 sm:text-md sm:w-auto'>Top Places</p>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className='p-[15px] bg-tertiaire rounded-[100%] w-fit absolute bottom-0 right-16'>
+                        <motion.div 
+                            className='p-[15px] bg-tertiaire rounded-[100%] w-fit absolute bottom-0 right-16'
+                            initial={{
+                                opacity:0
+                            }}
+
+                            animate={{opacity:1}}
+                            transition={{
+                                ease:'easeInOut',
+                                duration:1.5
+                            }}
+                        >
                             <img src={Add} alt="" className='w-[13.69px] h-[13.69px] sm:w-[26.67px] sm:h-[26.67px]'/>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>

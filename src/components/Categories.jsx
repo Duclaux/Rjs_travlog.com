@@ -3,6 +3,7 @@ import React from "react";
 import Word from '../assets/word.png'
 import Book from '../assets/book.png'
 import Cloudy from '../assets/cloudy.png'
+import { motion } from "framer-motion"; 
 
 
 const Categories = () => {
@@ -10,14 +11,46 @@ const Categories = () => {
   return (
     <div className='xl:ml-[190px]'>
         <div className='xl:grid xl:grid-cols-3'>
-            <div className='xl:col-span-1'>
+            <motion.div 
+                className='xl:col-span-1'
+                initial={{
+                    opacity:0,
+                    y:300
+                }}
+                whileInView={{
+                    opacity:1,
+                    y:0,
+                    transition:{
+                        type:"spring",
+                        duration:1
+                    }
+                }}
+
+                viewport={{once:true, amount:1}}
+            >
                 <div className='mb-[32px] text-center xl:text-start xl:my-[210.5px]'>
                     <h1 className='text-secondaire text-sm mb-[16px] uppercase font-bold md:text-[23px]'>Services</h1>
                     <p className='text-[32px] font-bold md:text-[40px] xl:text-[44px]'>Our top value <br className='hidden xl:flex'/>categories <br className='lg:hidden'/>for you</p>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className='xl:col-span-2 px-[32px] lg:px-0 xl:py-[64px] lg:flex lg:items-center mt-[32px] lg:mt-0 lg:justify-between'>
+            <motion.div 
+                className='xl:col-span-2 px-[32px] lg:px-0 xl:py-[64px] lg:flex lg:items-center mt-[32px] lg:mt-0 lg:justify-between'
+                initial={{
+                    opacity:0,
+                    y:300
+                }}
+                whileInView={{
+                    opacity:1,
+                    y:0,
+                    transition:{
+                        type:"spring",
+                        duration:1.5
+                    }
+                }}
+
+                viewport={{once:true, amount:1}}
+            >
                 {/* bloc 1 */}
                 <div className='border-[1px] border-[#19182570] text-center px-[32px] w-full py-[64px] lg:px-[64px] rounded-[32px] lg:mx-[8px] xl:mr-[10.5px]'>
                     <img src={Word} alt="" sizes={64} className='m-auto mb-[32px] lg:mb-[64px]'/>
@@ -47,7 +80,7 @@ const Categories = () => {
                         <p className='text-[18px] text-[#191825] opacity-[50%]'>What looked like a<br className="hidden lg:flex xl:hidden"/> small patch of <br className="hidden lg:flex xl:hidden"/>purple grass, above <br className="hidden lg:flex xl:hidden"/>five feet.</p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     </div>
   )
