@@ -35,22 +35,7 @@ const Categories = () => {
             </motion.div>
 
             <motion.div 
-                className='xl:col-span-2 px-[32px] lg:px-0 xl:py-[64px] lg:flex lg:items-center mt-[32px] lg:mt-0 lg:justify-between'
-                initial={{
-                    opacity:0,
-                    y:300
-                }}
-                whileInView={{
-                    opacity:1,
-                    y:0,
-                    transition:{
-                        type:"spring",
-                        duration:1.5
-                    }
-                }}
-
-                viewport={{once:true, amount:1}}
-            >
+                className='xl:col-span-2 px-[32px] lg:px-0 xl:py-[64px] lg:flex lg:items-center mt-[32px] lg:mt-0 lg:justify-between'>
                 {/* bloc 1 */}
                 <div className='border-[1px] border-[#19182570] text-center px-[32px] w-full py-[64px] lg:px-[64px] rounded-[32px] lg:mx-[8px] xl:mr-[10.5px]'>
                     <img src={Word} alt="" sizes={64} className='m-auto mb-[32px] lg:mb-[64px]'/>
